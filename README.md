@@ -31,3 +31,8 @@
 
 ---
 *Сделано с ненавистью к прокрастинации.*
+
+<img width="1919" height="997" alt="image" src="https://github.com/user-attachments/assets/b0ba65dd-24a6-48ad-860d-cafa2b5eee32" />
+<img width="1916" height="913" alt="image" src="https://github.com/user-attachments/assets/d9072fde-0e01-4199-9888-cf7ca355151b" />
+
+
