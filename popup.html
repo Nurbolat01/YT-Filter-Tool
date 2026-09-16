@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>YT Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="card">
+    <!-- Шапка -->
+    <div class="header">
+      <div class="logo">
+        <span class="icon">🛑</span>
+        <h2>YT Filter Tool </h2>
+      </div>
+    </div>
+    <!-- Кнопка поддержки в popup.html -->
+    <div class="header-actions">
+      <a href="https://boosty.to/shtany" target="_blank" class="coffee-btn" title="Поддержать разработчика">
+        🚀 Поддержать на Boosty
+      </a>
+    </div>
+
+    <!-- Переключатель Shorts -->
+    <div class="toggle-section">
+      <div class="toggle-label">
+        <span>🎬 Блокировать Shorts</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="shorts-toggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <!-- Счетчик срывов -->
+    <div class="relapse-card">
+      <div class="relapse-info">
+        <span class="relapse-title">🚨 Количество срывов:</span>
+        <span id="relapse-counter" class="relapse-count">0</span>
+      </div>
+      <button id="reset-relapse-btn" class="btn-reset-small" title="Сбросить счетчик">🔄</button>
+    </div>
+
+    <!-- Инпут и Кнопка добавления папки -->
+    <div class="add-section">
+      <input type="text" id="folder-input" placeholder="Название новой папки..." />
+      <button id="add-folder-btn" class="btn btn-primary">
+        <span>+ Папка</span>
+      </button>
+    </div>
+
+    <!-- Список папок и слов -->
+    <div id="folders-container" class="folders-list"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "YT Focus Blocker",
+  "version": "1.0",
+  "description": "Скрывает триггерные обложки и помогает бороться с зависимостью.",
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "icon128.png",
+    "48": "icon128.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["funny.jpg"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}

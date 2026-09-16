@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  width: 350px;
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+  padding: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Шапка */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #272727;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo .icon {
+  font-size: 20px;
+}
+
+.logo h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Секция добавления */
+.add-section {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  background-color: #212121;
+  border: 1px solid #3f3f3f;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #ff4444;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background-color: #ff4444;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #cc0000;
+}
+
+/* Список папок */
+.folders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Аккордеон Папки */
+.folder-item {
+  background-color: #181818;
+  border: 1px solid #272727;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background-color: #212121;
+  cursor: pointer;
+  user-select: none;
+}
+
+.folder-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.folder-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delete-folder-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-folder-btn:hover {
+  color: #ff4444;
+}
+
+/* Контент внутри папки */
+.folder-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #272727;
+}
+
+.word-input-row {
+  display: flex;
+  gap: 6px;
+}
+
+.words-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag {
+  background-color: #2a2a2a;
+  border: 1px solid #3f3f3f;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag-remove {
+  color: #aaa;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tag-remove:hover {
+  color: #ff4444;
+}
+
+/* Стрелочка индикатор */
+.folder-arrow {
+  font-size: 10px;
+  color: #888;
+  transition: transform 0.2s ease;
+  margin-right: 4px;
+}
+
+/* Переворачиваем стрелку, когда папка свернута */
+.folder-item.collapsed .folder-arrow {
+  transform: rotate(-90deg);
+}
+
+/* Скрываем содержимое свернутой папки */
+.folder-item.collapsed .folder-body {
+  display: none;
+}
+
+
+/* Секция тоггла */
+.toggle-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #181818;
+  border: 1px solid #272727;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.toggle-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+/* Красивый тоггл (Switch) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #3f3f3f;
+  transition: .3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background-color: #ff4444;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Карточка счетчика срывов */
+.relapse-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #261313;
+  border: 1px solid #4a1d1d;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.relapse-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.relapse-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff8888;
+}
+
+.relapse-count {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ff4444;
+}
+
+.btn-reset-small {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.btn-reset-small:hover {
+  opacity: 1;
+}
+
+.coffee-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #FFDD00;
+  color: #000000;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.coffee-btn:hover {
+  background-color: #ffea61;
+  transform: scale(1.05);
+}
